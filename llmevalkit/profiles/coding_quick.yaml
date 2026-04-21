@@ -1,0 +1,8 @@
+name: coding_quick
+description: Tiny coding smoke test — 3 HumanEval problems only.
+runners:
+  - name: evalplus
+    tasks: [humaneval]
+    args:
+      greedy: true
+      id_range: [0, 3]

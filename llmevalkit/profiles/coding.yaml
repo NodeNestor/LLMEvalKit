@@ -1,0 +1,17 @@
+name: coding
+description: Code generation — HumanEval+, MBPP+, BigCodeBench, LiveCodeBench.
+runners:
+  - name: evalplus
+    tasks: [humaneval, mbpp]
+    args:
+      greedy: true
+  - name: bigcodebench
+    tasks: [bigcodebench]
+    args:
+      split: complete
+      subset: hard
+  - name: livecodebench
+    tasks: [livecodebench]
+    args:
+      release_version: release_v4
+      scenario: codegeneration

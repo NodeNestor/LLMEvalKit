@@ -1,0 +1,26 @@
+name: smallmodel_bench
+description: |
+  Size-appropriate benchmark for small models (~300M–3B). 30-50 samples/task
+  for statistical signal without burning hours. Generation-based tasks only
+  (skips loglikelihood MC that chat endpoints can't score).
+
+  Target runtime: ~20 min per model on a 5060 Ti.
+  Covers: math (gsm8k w/ CoT fewshot), instruction-following, code.
+runners:
+  - name: simple-chat
+    tasks: []
+
+  # Math — 8-shot CoT lifts small models a lot
+  - name: lm-eval-harness
+    tasks: [gsm8k]
+    args:
+      limit: 50
+      num_fewshot: 8
+      batch_size: 4
+
+  # Inspect-ai — generation tasks
+  - name: inspect-ai
+    tasks: [gsm8k, ifeval, humaneval, mbpp]
+    args:
+      limit: 30
+      max_connections: 8

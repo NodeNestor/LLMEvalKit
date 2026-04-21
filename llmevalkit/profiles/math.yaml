@@ -1,0 +1,16 @@
+name: math
+description: Math reasoning — GSM8K, MATH-500, AIME. Run with chain-of-thought prompts.
+runners:
+  - name: lm-eval-harness
+    tasks:
+      - gsm8k
+      - gsm8k_cot
+      - minerva_math
+    args:
+      num_fewshot: 4
+      apply_chat_template: true
+  - name: evalchemy
+    tasks:
+      - AIME24
+      - AIME25
+      - MATH500

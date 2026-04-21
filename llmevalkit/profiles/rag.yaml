@@ -1,0 +1,9 @@
+name: rag
+description: RAG + retrieval. Use MTEB for embedding models, RAGAS for end-to-end pipelines.
+runners:
+  - name: simple-chat
+    tasks: []
+    args:
+      prompts:
+        - [rag-hello, "You are a RAG eval stub. Reply with 'ready'."]
+# NOTE: Real RAG eval needs your pipeline wired into RAGAS or BEIR. See configs/examples/ragas.yaml.

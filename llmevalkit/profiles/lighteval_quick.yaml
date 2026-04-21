@@ -1,0 +1,7 @@
+name: lighteval_quick
+description: Smoke test lighteval — gsm8k, 5 samples.
+runners:
+  - name: lighteval
+    tasks: [gsm8k]
+    args:
+      max_samples: 5

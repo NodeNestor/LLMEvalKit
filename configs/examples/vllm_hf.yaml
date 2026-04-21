@@ -1,0 +1,10 @@
+name: qwen3.5-9b-vllm
+kind: vllm
+model: Qwen/Qwen3.5-9B-Instruct
+host: 127.0.0.1
+port: 8000
+tensor_parallel_size: 1
+max_model_len: 32768
+gpu_memory_utilization: 0.9
+trust_remote_code: true
+# For RTX 5060 Ti (Blackwell): may need enforce_eager: true until vLLM bumps to cu128

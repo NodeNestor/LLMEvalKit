@@ -1,0 +1,4 @@
+name: claude-opus-4-7
+kind: anthropic
+model_name: claude-opus-4-7
+# Set ANTHROPIC_API_KEY in env.

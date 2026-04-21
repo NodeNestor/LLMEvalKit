@@ -1,0 +1,15 @@
+# Template for a custom PyTorch model (finetune, frankenmerge, novel
+# architecture, ES/RL-trained weights — anything that doesn't fit a
+# standard inference server).
+#
+# 1. Copy scripts/custom_model_server_template.py to your project
+# 2. Fill in `load_model()` and `generate()`
+# 3. Point `script:` at your serve.py
+name: my-custom-model
+kind: custom
+script: /path/to/your/project/serve.py
+model_name: my-custom-model-v1
+host: 127.0.0.1
+port: 8001
+env:
+    CUDA_VISIBLE_DEVICES: "0"

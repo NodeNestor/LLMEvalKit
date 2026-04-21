@@ -1,0 +1,9 @@
+name: qwen3.5-0.8b-smoketest
+kind: custom
+script: E:/Repos/LLMEvalKit/scripts/serve_qwen35_0_8b.py
+model_name: qwen3.5-0.8b
+host: 127.0.0.1
+port: 8001
+env:
+    CUDA_VISIBLE_DEVICES: "0"
+startup_timeout: 600

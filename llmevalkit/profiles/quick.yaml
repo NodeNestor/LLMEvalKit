@@ -1,0 +1,11 @@
+name: quick
+description: 5-minute sanity check — confirms the adapter is alive and the model answers basic prompts.
+runners:
+  - name: simple-chat
+    tasks: []
+  - name: lm-eval-harness
+    tasks: [gsm8k]
+    args:
+      limit: 20
+      num_fewshot: 0
+      batch_size: 4

@@ -1,0 +1,12 @@
+name: longctx
+description: Long-context eval — RULER exposes real vs. claimed context length.
+runners:
+  - name: ruler
+    tasks: [synthetic]
+    args:
+      max_seq_length: 131072
+      num_samples: 100
+  - name: inspect-ai
+    tasks: [niah]
+    args:
+      limit: 50

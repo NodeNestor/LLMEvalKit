@@ -1,0 +1,10 @@
+name: multilingual
+description: Multilingual reasoning + knowledge.
+runners:
+  - name: lm-eval-harness
+    tasks:
+      - mgsm_direct
+      - xnli
+      - global_mmlu
+    args:
+      num_fewshot: 4

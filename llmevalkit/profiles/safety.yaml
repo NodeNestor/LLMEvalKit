@@ -1,0 +1,11 @@
+name: safety
+description: Red-team + jailbreak resistance. HarmBench runs 18 methods.
+runners:
+  - name: harmbench
+    tasks: [harmbench]
+    args:
+      method: DirectRequest
+      behaviors: harmbench_behaviors_text_all
+  - name: inspect-ai
+    tasks:
+      - jailbreakbench

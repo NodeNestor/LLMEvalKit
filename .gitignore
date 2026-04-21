@@ -1,0 +1,32 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+.pytest_cache/
+.ruff_cache/
+
+# Cloned frameworks are huge — install.py fetches on demand
+frameworks/*/
+!frameworks/.gitkeep
+
+# Eval run outputs
+results/*/
+!results/.gitkeep
+
+# Model weight dumps
+*.gguf
+*.safetensors
+*.bin
+*.pt
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Inference server logs
+*.log
+servers/

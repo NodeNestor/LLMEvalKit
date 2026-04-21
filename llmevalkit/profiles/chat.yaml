@@ -1,0 +1,7 @@
+name: chat
+description: Open-ended chat quality via Arena-Hard-Auto. Needs a judge model (GPT-4o recommended).
+runners:
+  - name: arena-hard
+    tasks: [arena-hard]
+    args:
+      judge_model: gpt-4o-2024-08-06

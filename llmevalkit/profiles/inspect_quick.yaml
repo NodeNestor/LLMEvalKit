@@ -1,0 +1,8 @@
+name: inspect_quick
+description: Small Inspect AI smoke test — gsm8k 5 samples.
+runners:
+  - name: inspect-ai
+    tasks: [gsm8k]
+    args:
+      limit: 5
+      max_connections: 4

@@ -1,0 +1,9 @@
+name: bigcodebench_quick
+description: Tiny BigCodeBench test — 3 problems.
+runners:
+  - name: bigcodebench
+    tasks: [bigcodebench]
+    args:
+      split: complete
+      subset: hard
+      id_range: [0, 3]

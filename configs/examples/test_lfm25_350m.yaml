@@ -1,0 +1,4 @@
+name: lfm2.5-350m-running
+kind: openai
+base_url: http://127.0.0.1:8002
+model_name: lfm2.5-350m

@@ -1,0 +1,16 @@
+name: agentic
+description: Agent behaviours — tool use, function calling, SWE-bench. Docker required for mini-swe-agent.
+runners:
+  - name: bfcl
+    tasks: [bfcl]
+    args:
+      test_category: all
+      num_threads: 4
+  - name: mini-swe-agent
+    tasks: [swe-bench-verified]
+    args:
+      split: verified
+      subset: 50   # drop to test a handful; remove for full 500
+  - name: inspect-ai
+    tasks:
+      - gaia

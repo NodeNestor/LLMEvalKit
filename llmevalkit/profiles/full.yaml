@@ -1,0 +1,13 @@
+name: full
+description: The whole shebang. Takes many hours. Run when you want a real scorecard.
+extends:
+  - quick
+  - knowledge
+  - reasoning
+  - math
+  - coding
+  - agentic
+  - multilingual
+  - longctx
+  - safety
+  - chat

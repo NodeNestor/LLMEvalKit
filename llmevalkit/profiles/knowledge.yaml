@@ -1,0 +1,13 @@
+name: knowledge
+description: Knowledge + reading comprehension breadth.
+runners:
+  - name: lm-eval-harness
+    tasks:
+      - mmlu
+      - mmlu_pro
+      - arc_challenge
+      - truthfulqa_mc2
+      - drop
+    args:
+      num_fewshot: 5
+      batch_size: 8

@@ -1,0 +1,6 @@
+name: already-running-model
+kind: openai
+base_url: http://127.0.0.1:8787
+model_name: my-running-model
+# Use when you have llama-server / vllm / SGLang / TGI / Ollama / LM Studio
+# already running. Saves startup time.

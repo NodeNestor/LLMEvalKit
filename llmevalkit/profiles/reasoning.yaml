@@ -1,0 +1,19 @@
+name: reasoning
+description: Reasoning + instruction following.
+runners:
+  - name: lm-eval-harness
+    tasks:
+      - mmlu_pro
+      - bbh
+      - gpqa_diamond_zeroshot
+      - ifeval
+      - agieval_en
+    args:
+      num_fewshot: 0
+      apply_chat_template: true
+  - name: inspect-ai
+    tasks:
+      - simpleqa
+      - livebench
+    args:
+      limit: 200

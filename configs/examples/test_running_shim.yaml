@@ -1,0 +1,4 @@
+name: qwen3.5-0.8b-running
+kind: openai
+base_url: http://127.0.0.1:8001
+model_name: qwen3.5-0.8b

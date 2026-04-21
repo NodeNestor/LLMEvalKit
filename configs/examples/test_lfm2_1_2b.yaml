@@ -1,0 +1,4 @@
+name: lfm2-1.2b-running
+kind: openai
+base_url: http://127.0.0.1:8003
+model_name: lfm2-1.2b
