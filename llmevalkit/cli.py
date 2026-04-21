@@ -19,6 +19,7 @@ from . import adapters as adapters_mod
 from . import runners as runners_mod
 from .profiles import list_profiles, load_profile
 from .results import run_dir, save_run, make_scorecard
+from .leaderboard import aggregate as lb_aggregate, render_markdown as lb_render
 
 app = typer.Typer(add_completion=False, no_args_is_help=True,
                   help="LLMEvalKit — universal LLM eval harness.")
@@ -117,6 +118,21 @@ def cmd_run(
     console.rule("[bold green]Done[/]")
     console.print(f"Scorecard: [cyan]{card}[/]")
     console.print(f"Wall time: {wall/60:.1f} min")
+
+
+@app.command("leaderboard")
+def cmd_leaderboard(
+    results_dir: Path = typer.Option(Path("results"), help="Where run outputs live."),
+    out: Path = typer.Option(None, help="Write to file; default stdout."),
+) -> None:
+    """Aggregate every run in results/ into LEADERBOARD.md."""
+    data, models = lb_aggregate(results_dir)
+    md = lb_render(data, models)
+    if out:
+        out.write_text(md, encoding="utf-8")
+        console.print(f"[green]wrote[/] {out}")
+    else:
+        console.print(md)
 
 
 if __name__ == "__main__":

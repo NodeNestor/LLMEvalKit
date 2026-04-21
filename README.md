@@ -2,6 +2,8 @@
 
 Universal LLM evaluation harness. Point it at **any model**, run **any benchmark**, get a scorecard.
 
+**Current scores:** see [`LEADERBOARD.md`](LEADERBOARD.md) — regenerated after every run via `python -m llmevalkit leaderboard`.
+
 ## Why this exists
 
 Every serious LLM eval framework (lm-evaluation-harness, lighteval, evalchemy, Inspect AI, BFCL, SWE-bench, RULER, HarmBench…) speaks **OpenAI-compatible HTTP**. Every modern inference server (vLLM, llama.cpp, SGLang, TGI, Ollama, LM Studio) **exposes** an OpenAI-compatible endpoint. That's the universal glue.
@@ -51,6 +53,9 @@ Frameworks are cloned under `frameworks/` (gitignored). You can delete / reinsta
 python -m llmevalkit list-profiles
 python -m llmevalkit list-runners
 python -m llmevalkit list-adapters
+
+# Aggregate every run under results/ into a unified LEADERBOARD.md
+python -m llmevalkit leaderboard --out LEADERBOARD.md
 
 # Dry-run to see the plan
 python -m llmevalkit run --model configs/examples/openai_gpt4o.yaml --profile quick --dry-run
