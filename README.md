@@ -26,7 +26,7 @@ One entry point. One YAML config per model. One YAML profile per benchmark bundl
 ## Install
 
 ```bash
-git clone https://github.com/Nodenester/LLMEvalKit.git
+git clone https://github.com/NodeNestor/LLMEvalKit.git
 cd LLMEvalKit
 pip install -e .
 ```
